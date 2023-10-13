@@ -1,14 +1,12 @@
-import { SvgProps } from 'react-native-svg';
-
 import * as Icons from './internal/index';
 
-export type IconProps = SvgProps & {
+export type IconProps = {
   icon: keyof typeof Icons;
   className?: string;
   size?: number;
 };
 
-export function Icon({ className, icon, size = 20, ...props }: IconProps) {
+export function Icon({ icon, size = 20, ...props }: IconProps) {
   const Component = Icons[icon];
 
   return <Component width={size} height={size} {...props} />;
