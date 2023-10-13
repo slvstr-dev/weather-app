@@ -1,17 +1,26 @@
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import { useRef } from 'react';
 import { Text, SafeAreaView, View, TouchableOpacity, Image } from 'react-native';
 
+import { BottomSheet } from '@/components/layout/BottomSheet/BottomSheet';
 import { Icon } from '@/components/ui/Icon/Icon';
 import SearchBar from '@/components/ui/SearchBar/SearchBar';
 
 export default function Header() {
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
+
+  const openBottomSheet = () => {
+    bottomSheetRef.current?.present();
+  };
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="min-h-full bg-white items-center flex-row px-5 gap-x-5">
-        <TouchableOpacity>
+        <TouchableOpacity onPress={openBottomSheet}>
           <Image source={require('@/assets/images/bike.png')} className="w-[30] h-[30]" />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex-1">
+        <TouchableOpacity className="flex-1" onPress={openBottomSheet}>
           <Text className="text-theme-medium text-[14px]">Delivery · Now</Text>
 
           <View className="flex-row items-center gap-x-1">
@@ -27,6 +36,12 @@ export default function Header() {
       </View>
 
       <SearchBar />
+
+      <BottomSheet ref={bottomSheetRef}>
+        <View>
+          <Text>BottomSheet</Text>
+        </View>
+      </BottomSheet>
     </SafeAreaView>
   );
 }
