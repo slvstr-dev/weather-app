@@ -1,10 +1,10 @@
-import { Svg, Path, type SvgProps } from 'react-native-svg';
+import Svg, { SvgProps, Path } from 'react-native-svg';
 
-interface PersonOutlineIconProps extends SvgProps {
+interface PersonOutlineProps extends SvgProps {
   size?: number;
 }
 
-export const PersonOutlineIcon = ({ size = 16, ...props }: PersonOutlineIconProps) => {
+export const PersonOutline = ({ size = 20, ...props }: PersonOutlineProps) => {
   return (
     <Svg height={size} width={size} viewBox="0 0 512 512" {...props}>
       <Path
