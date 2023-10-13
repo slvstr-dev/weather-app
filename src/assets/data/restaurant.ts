@@ -10,7 +10,8 @@ export const restaurant = {
   distance: '0.85 miles away',
   delivery: '10-20 min',
   tags: ['Italian', 'Pizza', 'Pasta', 'Salads', 'Vegetarian', 'Alcohol', 'Wine', 'Vegan Friendly'],
-  about: 'The home of handmade fresh pasta, thin crust pizza, protein packed salads, homemade sauces and dressings too. Choose your pasta shape and add any extras you like.',
+  about:
+    'The home of handmade fresh pasta, thin crust pizza, protein packed salads, homemade sauces and dressings too. Choose your pasta shape and add any extras you like.',
   food: [
     {
       category: 'Meal Deals',
