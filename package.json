@@ -7,10 +7,10 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "format": "bash -c 'prettier \"**/*\" --ignore-unknown --ignore-path <(cat .gitignore .prettierignore) --check'",
-    "format:fix": "bash -c 'prettier \"**/*\" --ignore-unknown --ignore-path <(cat .gitignore .prettierignore) --write'",
-    "lint": "eslint . --ignore-path .gitignore --cache",
-    "lint:fix": "eslint . --ignore-path .gitignore --fix --cache",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix --cache",
     "types": "tsc",
     "check": "pnpm lint && pnpm format && pnpm types && pnpm tsc",
     "storybook:ios": "pnpm storybook:generate && EXPO_PUBLIC_STORYBOOK_ENABLED=true expo start --ios",
@@ -63,5 +63,5 @@
   "eslintConfig": {
     "extends": "universe/native"
   },
-  "packageManager": "pnpm@8.6.12"
+  "packageManager": "pnpm@8.9.0"
 }
