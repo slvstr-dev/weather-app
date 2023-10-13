@@ -2,7 +2,6 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedParameters": true,
     "paths": {
