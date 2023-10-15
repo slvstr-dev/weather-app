@@ -6,7 +6,7 @@ import {
 } from '@gorhom/bottom-sheet';
 import { styled } from 'nativewind';
 import { ReactNode, type Ref, forwardRef, useMemo, useCallback } from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import { Button } from '@/components/ui/Button/Button';
 import { cn } from '@/utils/tailwindUtils';
@@ -46,18 +46,18 @@ export const BottomSheet = forwardRef(function BottomSheet(
     <StyledBottomSheetModal
       ref={ref}
       className={baseClassName}
-      backgroundStyle={cn('rounded-t-none bg-theme-lightGrey', backgroundStyle)}
+      backgroundStyle={cn('rounded-t-none bg-theme-lightGrey flex-1', backgroundStyle)}
       snapPoints={snapPoints}
       backdropComponent={renderBackdrop}
       overDragResistanceFactor={0}
       handleIndicatorStyle="hidden">
-      <View className="flex-1">
+      <SafeAreaView>
         {children}
 
         <Button baseClassName="mt-8 mx-2" onPress={handlePress}>
           {label || 'Close'}
         </Button>
-      </View>
+      </SafeAreaView>
     </StyledBottomSheetModal>
   );
 });

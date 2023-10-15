@@ -28,10 +28,11 @@ export const Preference = forwardRef(function Preference(
 
   return (
     <View ref={ref} className={baseClassName} style={{ gap: 8 }}>
-      <Text className="font-bold px-2">{label}</Text>
+      <Text className="font-semibold px-2 text-base">{label}</Text>
 
       <TouchableOpacity
         className={button({ isDisabled })}
+        style={{ gap: 8 }}
         onPress={handlePress}
         disabled={isDisabled}>
         {!!icon && <Icon icon={icon} className="text-theme-medium" />}
@@ -46,7 +47,7 @@ export const Preference = forwardRef(function Preference(
 
 const preference = tv({
   slots: {
-    button: 'flex-row items-center p-2.5 border-theme-grey border border-y bg-white gap-x-2.5',
+    button: 'flex-row items-center p-4 border-theme-grey border-y bg-white',
   },
   variants: {
     isDisabled: {

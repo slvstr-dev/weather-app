@@ -48,7 +48,7 @@ export default function Header() {
       <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-theme-lightGrey">
         <Toggle onPress={console.log} options={toggleOptions} baseClassName="justify-center px-2" />
 
-        <View className="flex-1 mt-10" style={{ gap: 30 }}>
+        <View className="mt-10" style={{ gap: 30 }}>
           <Link href="/" asChild>
             <Preference
               label="Your location"
