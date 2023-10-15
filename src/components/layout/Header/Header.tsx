@@ -37,7 +37,7 @@ export default function Header() {
 
       <SearchBar />
 
-      <BottomSheet ref={bottomSheetRef}>
+      <BottomSheet ref={bottomSheetRef} label="Confirm">
         <View>
           <Text>BottomSheet</Text>
         </View>
