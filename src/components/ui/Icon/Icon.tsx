@@ -1,4 +1,4 @@
-import * as Icons from './internal/index';
+import * as Icons from './components/index';
 
 export type IconProps = {
   icon: keyof typeof Icons;
