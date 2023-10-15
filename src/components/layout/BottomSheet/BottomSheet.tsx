@@ -11,7 +11,7 @@ import { View } from 'react-native';
 import { Button } from '@/components/ui/Button/Button';
 import { cn } from '@/utils/tailwindUtils';
 
-interface BottomSheetProps {
+export interface BottomSheetProps {
   children: ReactNode;
   baseClassName?: string;
   backgroundStyle?: string;
@@ -45,7 +45,7 @@ export const BottomSheet = forwardRef(function BottomSheet(
   return (
     <StyledBottomSheetModal
       ref={ref}
-      className={cn('px-2', baseClassName)}
+      className={baseClassName}
       backgroundStyle={cn('rounded-t-none bg-theme-lightGrey', backgroundStyle)}
       snapPoints={snapPoints}
       backdropComponent={renderBackdrop}
@@ -54,7 +54,7 @@ export const BottomSheet = forwardRef(function BottomSheet(
       <View className="flex-1">
         {children}
 
-        <Button baseClassName="mt-8" onPress={handlePress}>
+        <Button baseClassName="mt-8 mx-2" onPress={handlePress}>
           {label || 'Close'}
         </Button>
       </View>

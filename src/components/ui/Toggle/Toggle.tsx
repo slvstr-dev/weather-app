@@ -2,16 +2,15 @@ import { PropsWithChildren, useCallback, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { type VariantProps, tv } from 'tailwind-variants';
 
+import { Option } from '@/types/interfaces';
+
 export type ToggleVariants = VariantProps<typeof toggle>;
 
 export type ToggleProps = PropsWithChildren<ToggleVariants> & {
   baseClassName?: string;
-  onPress?: () => void;
+  onPress?: (option: Option) => void;
   isDisabled?: boolean;
-  options: {
-    label: string;
-    value: string;
-  }[];
+  options: Option[];
 };
 
 export const Toggle = ({ isDisabled, baseClassName, options, onPress }: ToggleProps) => {
@@ -20,11 +19,11 @@ export const Toggle = ({ isDisabled, baseClassName, options, onPress }: TogglePr
   const { base, text, pill } = toggle();
 
   return (
-    <View className={base({ className: baseClassName })}>
+    <View className={base({ className: baseClassName })} style={{ gap: 10 }}>
       {options?.map((option, idx) => {
         const handlePress = useCallback(() => {
           setActiveIdx(idx);
-          onPress?.();
+          onPress?.(option);
         }, [idx, onPress]);
 
         return (
@@ -32,7 +31,7 @@ export const Toggle = ({ isDisabled, baseClassName, options, onPress }: TogglePr
             key={option.value}
             className={pill({
               isActive: activeIdx === idx,
-              isDisabled: isDisabled && activeIdx === idx,
+              isDisabled,
             })}
             onPress={handlePress}
             disabled={isDisabled}>
@@ -46,7 +45,7 @@ export const Toggle = ({ isDisabled, baseClassName, options, onPress }: TogglePr
 
 const toggle = tv({
   slots: {
-    base: 'flex-row gap-2.5 flex-wrap',
+    base: 'flex-row flex-wrap',
     pill: 'rounded-full px-8 py-2',
     text: 'font-semibold text-theme-primary',
   },
@@ -59,7 +58,7 @@ const toggle = tv({
     },
     isDisabled: {
       true: {
-        pill: 'bg-theme-grey',
+        pill: 'opacity-50',
       },
     },
   },
