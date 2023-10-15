@@ -1,4 +1,5 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import { Link } from 'expo-router';
 import { useRef } from 'react';
 import { Text, SafeAreaView, View, TouchableOpacity, Image } from 'react-native';
 
@@ -48,19 +49,23 @@ export default function Header() {
         <Toggle onPress={console.log} options={toggleOptions} baseClassName="justify-center px-2" />
 
         <View className="flex-1 mt-10" style={{ gap: 30 }}>
-          <Preference
-            label="Your location"
-            option={{ label: 'London', value: 'london' }}
-            onPress={console.log}
-            icon="LocationOutline"
-          />
+          <Link href="/" asChild>
+            <Preference
+              label="Your location"
+              option={{ label: 'London', value: 'london' }}
+              onPress={console.log}
+              icon="LocationOutline"
+            />
+          </Link>
 
-          <Preference
-            label="Arrival time"
-            option={{ label: 'Now', value: 'now' }}
-            onPress={console.log}
-            icon="StopwatchOutline"
-          />
+          <Link href="/" asChild>
+            <Preference
+              label="Arrival time"
+              option={{ label: 'Now', value: 'now' }}
+              onPress={console.log}
+              icon="StopwatchOutline"
+            />
+          </Link>
         </View>
       </BottomSheet>
     </SafeAreaView>

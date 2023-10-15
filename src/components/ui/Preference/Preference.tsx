@@ -1,4 +1,4 @@
-import { PropsWithChildren, useCallback } from 'react';
+import { PropsWithChildren, Ref, forwardRef, useCallback } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { type VariantProps, tv } from 'tailwind-variants';
 
@@ -16,14 +16,10 @@ export type PreferenceProps = PropsWithChildren<PreferenceVariants> & {
   option: Option;
 };
 
-export const Preference = ({
-  isDisabled,
-  baseClassName,
-  option,
-  onPress,
-  label,
-  icon,
-}: PreferenceProps) => {
+export const Preference = forwardRef(function Preference(
+  { isDisabled, baseClassName, option, onPress, label, icon }: PreferenceProps,
+  ref: Ref<View>,
+) {
   const { button } = preference();
 
   const handlePress = useCallback(() => {
@@ -31,7 +27,7 @@ export const Preference = ({
   }, [onPress]);
 
   return (
-    <View className={baseClassName} style={{ gap: 8 }}>
+    <View ref={ref} className={baseClassName} style={{ gap: 8 }}>
       <Text className="font-bold px-2">{label}</Text>
 
       <TouchableOpacity
@@ -46,7 +42,7 @@ export const Preference = ({
       </TouchableOpacity>
     </View>
   );
-};
+});
 
 const preference = tv({
   slots: {
