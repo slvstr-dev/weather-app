@@ -34,7 +34,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   extra: {
     eas: {
-      projectId: 'daf732e9-e2da-4626-8378-df72f76a7b65',
+      projectId: 'e6e625d4-8e6e-4084-9c80-86ef7e135fec',
     },
   },
 });
