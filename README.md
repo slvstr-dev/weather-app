@@ -1,6 +1,6 @@
-# Weather App
+# CouchPotato
 
-Weather app built with Expo CLI
+CouchPotato; your comfort, our cuisine!
 
 ## TODO
 
