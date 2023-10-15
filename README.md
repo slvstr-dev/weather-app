@@ -9,3 +9,4 @@ Weather app built with Expo CLI
 - Replace Header preferences with data from global state manager
 - Move hardcoded text to translations
 - Decide on how to tackle 'Functional components cannot be given refs'
+- Remove unused dependencies
