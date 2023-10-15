@@ -2,9 +2,9 @@ import { type ExpoConfig, type ConfigContext } from 'expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: 'weather-app',
-  slug: 'weather-app',
-  scheme: 'weather-app',
+  name: 'CouchPotato',
+  slug: 'couch-potato',
+  scheme: 'couch-potato',
   version: '1.0.0',
   owner: 'slvstr',
   orientation: 'portrait',
