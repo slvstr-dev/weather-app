@@ -46,9 +46,9 @@ export const Toggle = ({ isDisabled, baseClassName, options, onPress }: TogglePr
 
 const toggle = tv({
   slots: {
-    base: 'flex-row gap-x-2 flex-wrap',
-    pill: 'rounded-full px-6 py-1',
-    text: 'font-semibold',
+    base: 'flex-row gap-2.5 flex-wrap',
+    pill: 'rounded-full px-8 py-2',
+    text: 'font-semibold text-theme-primary',
   },
   variants: {
     isActive: {

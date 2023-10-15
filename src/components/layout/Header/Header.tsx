@@ -5,6 +5,12 @@ import { Text, SafeAreaView, View, TouchableOpacity, Image } from 'react-native'
 import { BottomSheet } from '@/components/layout/BottomSheet/BottomSheet';
 import { Icon } from '@/components/ui/Icon/Icon';
 import SearchBar from '@/components/ui/SearchBar/SearchBar';
+import { Toggle } from '@/components/ui/Toggle/Toggle';
+
+const toggleOptions = [
+  { label: 'Delivery', value: 'delivery' },
+  { label: 'Pickup', value: 'pickup' },
+];
 
 export default function Header() {
   const bottomSheetRef = useRef<BottomSheetModal>(null);
@@ -37,10 +43,8 @@ export default function Header() {
 
       <SearchBar />
 
-      <BottomSheet ref={bottomSheetRef} label="Confirm">
-        <View>
-          <Text>BottomSheet</Text>
-        </View>
+      <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-theme-lightGrey">
+        <Toggle options={toggleOptions} baseClassName="justify-center" />
       </BottomSheet>
     </SafeAreaView>
   );

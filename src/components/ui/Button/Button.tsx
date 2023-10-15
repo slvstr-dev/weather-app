@@ -25,7 +25,7 @@ export const Button = ({ children, isDisabled, color, baseClassName, onPress }: 
 
 const button = tv({
   slots: {
-    base: 'rounded-sm px-4 py-2 items-center',
+    base: 'rounded p-4 items-center',
     text: 'text-white font-bold',
   },
   variants: {

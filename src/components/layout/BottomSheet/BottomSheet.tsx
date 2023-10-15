@@ -6,6 +6,7 @@ import {
 } from '@gorhom/bottom-sheet';
 import { styled } from 'nativewind';
 import { ReactNode, type Ref, forwardRef, useMemo, useCallback } from 'react';
+import { View } from 'react-native';
 
 import { Button } from '@/components/ui/Button/Button';
 import { cn } from '@/utils/tailwindUtils';
@@ -20,6 +21,7 @@ interface BottomSheetProps {
 const StyledBottomSheetModal = styled(BottomSheetModal, {
   props: {
     backgroundStyle: true,
+    handleIndicatorStyle: true,
   },
 });
 
@@ -47,12 +49,15 @@ export const BottomSheet = forwardRef(function BottomSheet(
       backgroundStyle={cn('rounded-t-none bg-theme-lightGrey', backgroundStyle)}
       snapPoints={snapPoints}
       backdropComponent={renderBackdrop}
-      overDragResistanceFactor={0}>
-      {children}
+      overDragResistanceFactor={0}
+      handleIndicatorStyle="hidden">
+      <View className="flex-1">
+        {children}
 
-      <Button isDisabled onPress={handlePress}>
-        {label || 'Close'}
-      </Button>
+        <Button baseClassName="mt-8" onPress={handlePress}>
+          {label || 'Close'}
+        </Button>
+      </View>
     </StyledBottomSheetModal>
   );
 });
