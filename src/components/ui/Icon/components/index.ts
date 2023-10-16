@@ -5,3 +5,4 @@ export * from './OptionsOutline';
 export * from './SearchOutline';
 export * from './StopwatchOutline';
 export * from './LocationOutline';
+export * from './CloseOutline';

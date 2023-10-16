@@ -46,7 +46,7 @@ export const BottomSheet = forwardRef(function BottomSheet(
     <StyledBottomSheetModal
       ref={ref}
       className={baseClassName}
-      backgroundStyle={cn('rounded-t-none bg-theme-lightGrey flex-1', backgroundStyle)}
+      backgroundStyle={cn('rounded-t-none bg-lightGrey flex-1', backgroundStyle)}
       snapPoints={snapPoints}
       backdropComponent={renderBackdrop}
       overDragResistanceFactor={0}
