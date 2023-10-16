@@ -47,12 +47,12 @@ const toggle = tv({
   slots: {
     base: 'flex-row flex-wrap',
     pill: 'rounded-full px-8 py-2',
-    text: 'font-semibold text-theme-primary',
+    text: 'font-semibold text-primary',
   },
   variants: {
     isActive: {
       true: {
-        pill: 'bg-theme-primary',
+        pill: 'bg-primary',
         text: 'text-white',
       },
     },

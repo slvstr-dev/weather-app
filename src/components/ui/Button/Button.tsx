@@ -31,12 +31,12 @@ const button = tv({
   variants: {
     color: {
       primary: {
-        base: 'bg-theme-primary',
+        base: 'bg-primary',
       },
     },
     isDisabled: {
       true: {
-        base: 'bg-theme-grey',
+        base: 'bg-grey',
       },
     },
   },

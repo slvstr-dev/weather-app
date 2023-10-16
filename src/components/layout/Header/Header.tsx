@@ -29,23 +29,23 @@ export default function Header() {
         </TouchableOpacity>
 
         <TouchableOpacity className="flex-1" onPress={openBottomSheet}>
-          <Text className="text-theme-medium text-[14px]">Delivery · Now</Text>
+          <Text className="text-medium text-[14px]">Delivery · Now</Text>
 
           <View className="flex-row items-center" style={{ gap: 4 }}>
             <Text className="text-[18px] font-bold">Utrecht</Text>
 
-            <Icon icon="ChevronDown" className="text-theme-primary" />
+            <Icon icon="ChevronDown" className="text-primary" />
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="bg-theme-lightGrey p-2.5 rounded-full" onPress={console.log}>
-          <Icon icon="PersonOutline" className="text-theme-primary" />
+        <TouchableOpacity className="bg-lightGrey p-2.5 rounded-full" onPress={console.log}>
+          <Icon icon="PersonOutline" className="text-primary" />
         </TouchableOpacity>
       </View>
 
       <SearchBar baseClassName="px-4" />
 
-      <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-theme-lightGrey">
+      <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-lightGrey">
         <Toggle onPress={console.log} options={toggleOptions} baseClassName="justify-center px-2" />
 
         <View className="mt-10" style={{ gap: 30 }}>

@@ -26,11 +26,11 @@ export const Preference = forwardRef(function Preference(
       <Text className="font-semibold px-2 text-base">{label}</Text>
 
       <TouchableOpacity className={button({ isDisabled })} style={{ gap: 8 }} disabled={isDisabled}>
-        {!!icon && <Icon icon={icon} className="text-theme-medium" />}
+        {!!icon && <Icon icon={icon} className="text-medium" />}
 
         <Text className="flex-1">{option.label}</Text>
 
-        <Icon icon="ChevronForward" className="text-theme-primary" />
+        <Icon icon="ChevronForward" className="text-primary" />
       </TouchableOpacity>
     </View>
   );
@@ -38,7 +38,7 @@ export const Preference = forwardRef(function Preference(
 
 const preference = tv({
   slots: {
-    button: 'flex-row items-center p-4 border-theme-grey border-y bg-white',
+    button: 'flex-row items-center p-4 border-grey border-y bg-white',
   },
   variants: {
     isDisabled: {
