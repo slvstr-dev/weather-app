@@ -18,6 +18,8 @@ export default function RootLayout() {
             header: () => <Header />,
           }}
         />
+
+        <Stack.Screen name="(modal)/filter" />
       </Stack>
     </BottomSheetModalProvider>
   );

@@ -26,8 +26,8 @@ export default function SearchBar({ baseClassName }: SearchBarProps) {
         </View>
       </View>
 
-      <Link href="/" asChild>
-        <TouchableOpacity className="p-2.5 rounded-full" onPress={console.log}>
+      <Link href="/(modal)/filter" asChild>
+        <TouchableOpacity className="p-2.5 rounded-full">
           <Icon icon="OptionsOutline" className="text-theme-primary" />
         </TouchableOpacity>
       </Link>
