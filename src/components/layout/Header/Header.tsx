@@ -53,7 +53,6 @@ export default function Header() {
             <Preference
               label="Your location"
               option={{ label: 'London', value: 'london' }}
-              onPress={console.log}
               icon="LocationOutline"
             />
           </Link>
@@ -62,7 +61,6 @@ export default function Header() {
             <Preference
               label="Arrival time"
               option={{ label: 'Now', value: 'now' }}
-              onPress={console.log}
               icon="StopwatchOutline"
             />
           </Link>
