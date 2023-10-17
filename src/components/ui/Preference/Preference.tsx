@@ -1,4 +1,4 @@
-import { PropsWithChildren, Ref, forwardRef } from 'react';
+import { Ref, forwardRef } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { type VariantProps, tv } from 'tailwind-variants';
 
@@ -7,7 +7,7 @@ import { Option } from '@/types/interfaces';
 
 export type PreferenceVariants = VariantProps<typeof preference>;
 
-export type PreferenceProps = PropsWithChildren<PreferenceVariants> & {
+export type PreferenceProps = PreferenceVariants & {
   baseClassName?: string;
   isDisabled?: boolean;
   icon?: IconProps['icon'];

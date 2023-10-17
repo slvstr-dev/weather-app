@@ -57,13 +57,11 @@ export default function Header() {
             />
           </Link>
 
-          <Link href="/" asChild>
-            <Preference
-              label="Arrival time"
-              option={{ label: 'Now', value: 'now' }}
-              icon="StopwatchOutline"
-            />
-          </Link>
+          <Preference
+            label="Arrival time"
+            option={{ label: 'Now', value: 'now' }}
+            icon="StopwatchOutline"
+          />
         </View>
       </BottomSheet>
     </SafeAreaView>
