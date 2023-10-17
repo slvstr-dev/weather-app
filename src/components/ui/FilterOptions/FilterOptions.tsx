@@ -13,45 +13,49 @@ export const FilterOptions = ({ baseClassName }: FilterOptionsProps) => {
   const { button, base } = filterOption();
 
   return (
-    <View className={base({ className: baseClassName })}>
-      <TouchableOpacity className={button()} style={{ gap: 20 }}>
-        <Icon icon="ArrowDownOutline" className="text-medium" />
+    <>
+      <View className={base({ className: baseClassName })}>
+        <TouchableOpacity className={button()} style={{ gap: 20 }}>
+          <Icon icon="ArrowDownOutline" className="text-medium" />
 
-        <Text className="flex-1">Sort</Text>
+          <Text className="flex-1">Sort</Text>
 
-        <Icon icon="ChevronForward" className="text-primary" />
-      </TouchableOpacity>
+          <Icon icon="ChevronForward" className="text-primary" />
+        </TouchableOpacity>
 
-      <View className="h-px bg-grey" />
+        <View className="h-px bg-grey" />
 
-      <TouchableOpacity className={button()} style={{ gap: 20 }}>
-        <Icon icon="RestaurantOutline" className="text-medium" />
+        <TouchableOpacity className={button()} style={{ gap: 20 }}>
+          <Icon icon="RestaurantOutline" className="text-medium" />
 
-        <Text className="flex-1">Hygene rating</Text>
+          <Text className="flex-1">Hygene rating</Text>
 
-        <Icon icon="ChevronForward" className="text-primary" />
-      </TouchableOpacity>
+          <Icon icon="ChevronForward" className="text-primary" />
+        </TouchableOpacity>
 
-      <View className="h-px bg-grey" />
+        <View className="h-px bg-grey" />
 
-      <TouchableOpacity className={button()} style={{ gap: 20 }}>
-        <Icon icon="PriceTagOutline" className="text-medium" />
+        <TouchableOpacity className={button()} style={{ gap: 20 }}>
+          <Icon icon="PriceTagOutline" className="text-medium" />
 
-        <Text className="flex-1">Offers</Text>
+          <Text className="flex-1">Offers</Text>
 
-        <Icon icon="ChevronForward" className="text-primary" />
-      </TouchableOpacity>
+          <Icon icon="ChevronForward" className="text-primary" />
+        </TouchableOpacity>
 
-      <View className="h-px bg-grey" />
+        <View className="h-px bg-grey" />
 
-      <TouchableOpacity className={button()} style={{ gap: 20 }}>
-        <Icon icon="NutritionOutline" className="text-medium" />
+        <TouchableOpacity className={button()} style={{ gap: 20 }}>
+          <Icon icon="NutritionOutline" className="text-medium" />
 
-        <Text className="flex-1">Dietary</Text>
+          <Text className="flex-1">Dietary</Text>
 
-        <Icon icon="ChevronForward" className="text-primary" />
-      </TouchableOpacity>
-    </View>
+          <Icon icon="ChevronForward" className="text-primary" />
+        </TouchableOpacity>
+      </View>
+
+      <Text className="text-base font-bold mb-4">Categories</Text>
+    </>
   );
 };
 
