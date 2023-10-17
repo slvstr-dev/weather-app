@@ -46,7 +46,11 @@ export default function Header() {
       <SearchBar baseClassName="px-4" />
 
       <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-lightGrey">
-        <Toggle onPress={console.log} options={toggleOptions} baseClassName="justify-center px-2" />
+        <Toggle
+          onChange={console.log}
+          options={toggleOptions}
+          baseClassName="justify-center px-2"
+        />
 
         <View className="mt-10" style={{ gap: 30 }}>
           <Link href="/" asChild>

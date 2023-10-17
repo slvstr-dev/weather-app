@@ -9,7 +9,7 @@ export const ArrowDownOutline = (props: SvgProps) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={48}
+        strokeWidth={32}
       />
     </Svg>
   );

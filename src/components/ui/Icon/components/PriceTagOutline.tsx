@@ -9,7 +9,7 @@ export const PriceTagOutline = (props: SvgProps) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={48}
+        strokeWidth={32}
       />
 
       <Path d="M384 160a32 32 0 1 1 32-32 32 32 0 0 1-32 32Z" fill="currentColor" />

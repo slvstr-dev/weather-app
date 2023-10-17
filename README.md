@@ -10,3 +10,4 @@ CouchPotato; your comfort, our cuisine!
 - Move hardcoded text to translations
 - Decide on how to tackle 'Functional components cannot be given refs'
 - Remove unused dependencies
+- Animate Modal reset filters button with React Reanimated

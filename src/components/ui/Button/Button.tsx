@@ -33,6 +33,10 @@ const button = tv({
       primary: {
         base: 'bg-primary',
       },
+      outlinePrimary: {
+        base: 'bg-white border border-primary',
+        text: 'text-primary',
+      },
     },
     isDisabled: {
       true: {
