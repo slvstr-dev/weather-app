@@ -46,7 +46,11 @@ export default function Header() {
       <SearchBar baseClassName="px-4" />
 
       <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-lightGrey">
-        <Toggle onPress={console.log} options={toggleOptions} baseClassName="justify-center px-2" />
+        <Toggle
+          onChange={console.log}
+          options={toggleOptions}
+          baseClassName="justify-center px-2"
+        />
 
         <View className="mt-10" style={{ gap: 30 }}>
           <Link href="/" asChild>
@@ -57,13 +61,11 @@ export default function Header() {
             />
           </Link>
 
-          <Link href="/" asChild>
-            <Preference
-              label="Arrival time"
-              option={{ label: 'Now', value: 'now' }}
-              icon="StopwatchOutline"
-            />
-          </Link>
+          <Preference
+            label="Arrival time"
+            option={{ label: 'Now', value: 'now' }}
+            icon="StopwatchOutline"
+          />
         </View>
       </BottomSheet>
     </SafeAreaView>

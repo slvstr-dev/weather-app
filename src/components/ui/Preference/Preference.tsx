@@ -1,4 +1,4 @@
-import { PropsWithChildren, Ref, forwardRef } from 'react';
+import { Ref, forwardRef } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { type VariantProps, tv } from 'tailwind-variants';
 
@@ -7,7 +7,7 @@ import { Option } from '@/types/interfaces';
 
 export type PreferenceVariants = VariantProps<typeof preference>;
 
-export type PreferenceProps = PropsWithChildren<PreferenceVariants> & {
+export type PreferenceProps = PreferenceVariants & {
   baseClassName?: string;
   isDisabled?: boolean;
   icon?: IconProps['icon'];
@@ -38,7 +38,7 @@ export const Preference = forwardRef(function Preference(
 
 const preference = tv({
   slots: {
-    button: 'flex-row items-center p-4 border-grey border-y bg-white',
+    button: 'flex-row items-center p-3 border-grey border-y bg-white',
   },
   variants: {
     isDisabled: {

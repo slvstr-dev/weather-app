@@ -8,12 +8,12 @@ export type ToggleVariants = VariantProps<typeof toggle>;
 
 export type ToggleProps = PropsWithChildren<ToggleVariants> & {
   baseClassName?: string;
-  onPress?: (option: Option) => void;
+  onChange?: (option: Option) => void;
   isDisabled?: boolean;
   options: Option[];
 };
 
-export const Toggle = ({ isDisabled, baseClassName, options, onPress }: ToggleProps) => {
+export const Toggle = ({ isDisabled, baseClassName, options, onChange }: ToggleProps) => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const { base, text, pill } = toggle();
@@ -23,8 +23,9 @@ export const Toggle = ({ isDisabled, baseClassName, options, onPress }: TogglePr
       {options?.map((option, idx) => {
         const handlePress = useCallback(() => {
           setActiveIdx(idx);
-          onPress?.(option);
-        }, [idx, onPress]);
+
+          onChange?.(option);
+        }, [idx, onChange]);
 
         return (
           <TouchableOpacity
