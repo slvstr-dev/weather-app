@@ -38,7 +38,7 @@ export const Preference = forwardRef(function Preference(
 
 const preference = tv({
   slots: {
-    button: 'flex-row items-center p-4 border-grey border-y bg-white',
+    button: 'flex-row items-center p-3 border-grey border-y bg-white',
   },
   variants: {
     isDisabled: {
