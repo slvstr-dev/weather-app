@@ -1,5 +1,5 @@
 import { Ref, forwardRef } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { type VariantProps, tv } from 'tailwind-variants';
 
 import { Icon, IconProps } from '@/components/ui/Icon/Icon';
@@ -11,28 +11,28 @@ export type PreferenceProps = PreferenceVariants & {
   baseClassName?: string;
   isDisabled?: boolean;
   icon?: IconProps['icon'];
-  label: string;
   option: Option;
 };
 
 export const Preference = forwardRef(function Preference(
-  { isDisabled, baseClassName, option, label, icon }: PreferenceProps,
-  ref: Ref<View>,
+  { isDisabled, baseClassName, option, icon, ...props }: PreferenceProps,
+  ref: Ref<TouchableOpacity>,
 ) {
-  const { button } = preference();
+  const { button } = preference({ className: baseClassName });
 
   return (
-    <View ref={ref} className={baseClassName} style={{ gap: 8 }}>
-      <Text className="font-semibold px-2 text-base">{label}</Text>
+    <TouchableOpacity
+      ref={ref}
+      className={button({ isDisabled })}
+      style={{ gap: 8 }}
+      disabled={isDisabled}
+      {...props}>
+      {!!icon && <Icon icon={icon} className="text-medium" />}
 
-      <TouchableOpacity className={button({ isDisabled })} style={{ gap: 8 }} disabled={isDisabled}>
-        {!!icon && <Icon icon={icon} className="text-medium" />}
+      <Text className="flex-1">{option.label}</Text>
 
-        <Text className="flex-1">{option.label}</Text>
-
-        <Icon icon="ChevronForward" className="text-primary" />
-      </TouchableOpacity>
-    </View>
+      <Icon icon="ChevronForward" className="text-primary" />
+    </TouchableOpacity>
   );
 });
 

@@ -43,6 +43,19 @@ export default function RootLayout() {
             ),
           }}
         />
+
+        <Stack.Screen
+          name="(modal)/location"
+          options={{
+            presentation: 'fullScreenModal',
+            headerTitle: 'Select location',
+            headerLeft: () => (
+              <TouchableOpacity onPress={goBack}>
+                <Icon icon="CloseOutline" size={28} className="text-primary" />
+              </TouchableOpacity>
+            ),
+          }}
+        />
       </Stack>
     </BottomSheetModalProvider>
   );
