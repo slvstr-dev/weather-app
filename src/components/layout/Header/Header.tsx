@@ -53,19 +53,22 @@ export default function Header() {
         />
 
         <View className="mt-10" style={{ gap: 30 }}>
-          <Link href="/" asChild>
-            <Preference
-              label="Your location"
-              option={{ label: 'London', value: 'london' }}
-              icon="LocationOutline"
-            />
-          </Link>
+          <View style={{ gap: 8 }}>
+            <Text className="font-semibold px-2 text-base">Your location</Text>
 
-          <Preference
-            label="Arrival time"
-            option={{ label: 'Now', value: 'now' }}
-            icon="StopwatchOutline"
-          />
+            <Link href="/(modal)/location" asChild>
+              <Preference
+                option={{ label: 'Current location', value: 'current_location' }}
+                icon="LocationOutline"
+              />
+            </Link>
+          </View>
+
+          <View style={{ gap: 8 }}>
+            <Text className="font-semibold px-2 text-base">Arrival time</Text>
+
+            <Preference option={{ label: 'Now', value: 'now' }} icon="StopwatchOutline" />
+          </View>
         </View>
       </BottomSheet>
     </SafeAreaView>
