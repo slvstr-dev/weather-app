@@ -49,6 +49,7 @@ export default function RootLayout() {
           options={{
             presentation: 'fullScreenModal',
             headerTitle: 'Select location',
+            headerShadowVisible: false,
             headerLeft: () => (
               <TouchableOpacity onPress={goBack}>
                 <Icon icon="CloseOutline" size={28} className="text-primary" />
