@@ -19,7 +19,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   jsEngine: 'hermes',
   ios: {
     supportsTablet: true,
-    jsEngine: 'jsc',
   },
   android: {
     adaptiveIcon: {
