@@ -40,7 +40,8 @@ const button = tv({
     },
     isDisabled: {
       true: {
-        base: 'bg-grey',
+        base: 'bg-white border-grey',
+        text: 'text-grey',
       },
     },
   },

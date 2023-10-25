@@ -12,7 +12,6 @@ This project started from following [this tutorial](https://www.youtube.com/watc
 [ ] Move hardcoded text to translations
 [ ] Decide on how to tackle 'Functional components cannot be given refs'
 [ ] Remove unused dependencies
-[ ] Animate Modal reset filters button with React Reanimated
 [ ] Replace deprecated ParallaxScrollView
 [ ] Split pages up in more reusable components
 [ ] Fetch data from mock api
