@@ -10,12 +10,12 @@ export type PreferenceVariants = VariantProps<typeof preference>;
 export type PreferenceProps = PreferenceVariants & {
   baseClassName?: string;
   isDisabled?: boolean;
-  icon?: IconProps['icon'];
+  name?: IconProps['name'];
   option: Option;
 };
 
 export const Preference = forwardRef(function Preference(
-  { isDisabled, baseClassName, option, icon, ...props }: PreferenceProps,
+  { isDisabled, baseClassName, option, name, ...props }: PreferenceProps,
   ref: Ref<TouchableOpacity>,
 ) {
   const { button } = preference({ className: baseClassName });
@@ -27,11 +27,11 @@ export const Preference = forwardRef(function Preference(
       style={{ gap: 8 }}
       disabled={isDisabled}
       {...props}>
-      {!!icon && <Icon icon={icon} className="text-medium" />}
+      {!!name && <Icon name={name} className="text-medium" />}
 
       <Text className="flex-1">{option.label}</Text>
 
-      <Icon icon="ChevronForward" className="text-primary" />
+      <Icon name="ChevronForward" className="text-primary" />
     </TouchableOpacity>
   );
 });

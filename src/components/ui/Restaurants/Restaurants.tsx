@@ -1,16 +1,23 @@
 import { Link } from 'expo-router';
+import { styled } from 'nativewind';
 import { Text, ScrollView, View, Image, TouchableOpacity } from 'react-native';
 
 import { restaurants } from '@/assets/data/home';
 
+const StyledScrollView = styled(ScrollView, {
+  props: {
+    contentContainerStyle: true,
+  },
+});
+
 export const Restaurants = () => {
   return (
-    <ScrollView
+    <StyledScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ columnGap: 10, padding: 16 }}>
+      contentContainerStyle="p-4 pr-0">
       {restaurants.map((restaurant, idx) => (
-        <Link key={idx} href={`/`} asChild>
+        <Link key={idx} href="/details" asChild className="mr-4">
           <TouchableOpacity>
             <View className="w-[300px] h-[250px] bg-white shadow rounded-sm">
               <Image source={restaurant.img} className="rounded-t-sm flex-1 w-full h-full" />
@@ -28,6 +35,6 @@ export const Restaurants = () => {
           </TouchableOpacity>
         </Link>
       ))}
-    </ScrollView>
+    </StyledScrollView>
   );
 };

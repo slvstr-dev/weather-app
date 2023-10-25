@@ -34,23 +34,19 @@ export default function Header() {
           <View className="flex-row items-center" style={{ gap: 4 }}>
             <Text className="text-[18px] font-bold">Utrecht</Text>
 
-            <Icon icon="ChevronDown" className="text-primary" />
+            <Icon name="ChevronDown" className="text-primary" />
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="bg-lightGrey p-2.5 rounded-full" onPress={console.log}>
-          <Icon icon="PersonOutline" className="text-primary" />
+        <TouchableOpacity className="bg-lightGrey p-2.5 rounded-full">
+          <Icon name="PersonOutline" className="text-primary" />
         </TouchableOpacity>
       </View>
 
       <SearchBar baseClassName="px-4" />
 
       <BottomSheet ref={bottomSheetRef} label="Confirm" backgroundStyle="bg-lightGrey">
-        <Toggle
-          onChange={console.log}
-          options={toggleOptions}
-          baseClassName="justify-center px-2"
-        />
+        <Toggle options={toggleOptions} baseClassName="justify-center px-2" />
 
         <View className="mt-10" style={{ gap: 30 }}>
           <View style={{ gap: 8 }}>
@@ -59,7 +55,7 @@ export default function Header() {
             <Link href="/(modal)/location" asChild>
               <Preference
                 option={{ label: 'Current location', value: 'current_location' }}
-                icon="LocationOutline"
+                name="LocationOutline"
               />
             </Link>
           </View>
@@ -67,7 +63,7 @@ export default function Header() {
           <View style={{ gap: 8 }}>
             <Text className="font-semibold px-2 text-base">Arrival time</Text>
 
-            <Preference option={{ label: 'Now', value: 'now' }} icon="StopwatchOutline" />
+            <Preference option={{ label: 'Now', value: 'now' }} name="StopwatchOutline" />
           </View>
         </View>
       </BottomSheet>

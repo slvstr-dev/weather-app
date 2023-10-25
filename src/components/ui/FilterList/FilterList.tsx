@@ -5,7 +5,7 @@ import { Icon, IconProps } from '@/components/ui/Icon/Icon';
 
 export type Filter = {
   label: string;
-  icon: IconProps['icon'];
+  name: IconProps['name'];
   onPress: () => void;
   isDisabled?: boolean;
 };
@@ -30,11 +30,11 @@ export const FilterOptions = ({ baseClassName, filters }: FilterOptionsProps) =>
             style={{ gap: 20 }}
             onPress={filter.onPress}
             disabled={filter.isDisabled}>
-            <Icon icon={filter.icon} className="text-medium" />
+            <Icon name={filter.name} className="text-medium" />
 
             <Text className="flex-1">{filter.label}</Text>
 
-            <Icon icon="ChevronForward" className="text-primary" />
+            <Icon name="ChevronForward" className="text-primary" />
           </TouchableOpacity>
         ))}
       </View>

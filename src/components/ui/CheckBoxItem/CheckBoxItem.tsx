@@ -1,3 +1,4 @@
+import { styled } from 'nativewind';
 import { Text, TouchableOpacity, View } from 'react-native';
 import BouncyCheckBox from 'react-native-bouncy-checkbox';
 import { type VariantProps, tv } from 'tailwind-variants';
@@ -17,6 +18,14 @@ export interface CheckBoxItemProps extends CheckBoxItemVariants {
   onChange?: () => void;
 }
 
+const StyledBouncyCheckBox = styled(BouncyCheckBox, {
+  props: {
+    iconStyle: true,
+    innerIconStyle: true,
+    textContainerStyle: true,
+  },
+});
+
 export const CheckBoxItem = ({
   name,
   count,
@@ -33,12 +42,12 @@ export const CheckBoxItem = ({
           {name} ({count})
         </Text>
 
-        <BouncyCheckBox
+        <StyledBouncyCheckBox
           isChecked={isChecked}
           fillColor={fullConfig.theme?.colors?.primary as string}
-          iconStyle={{ borderRadius: 4, borderWidth: 2 }}
-          innerIconStyle={{ borderRadius: 4, borderWidth: 2 }}
-          textContainerStyle={{ marginLeft: 0 }}
+          iconStyle="rounded border-2"
+          innerIconStyle="rounded border-2"
+          textContainerStyle="ml-0"
           disableBuiltInState
           onPress={onChange}
         />

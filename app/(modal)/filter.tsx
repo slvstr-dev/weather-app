@@ -10,23 +10,23 @@ import { FilterOptions, type Filter } from '@/components/ui/FilterList/FilterLis
 const filters: Filter[] = [
   {
     label: 'Sort',
-    icon: 'ArrowDownOutline',
+    name: 'ArrowDownOutline',
     onPress: () => {},
   },
   {
     label: 'Hygene rating',
-    icon: 'RestaurantOutline',
+    name: 'RestaurantOutline',
     onPress: () => {},
   },
   {
     label: 'Offers',
-    icon: 'PriceTagOutline',
+    name: 'PriceTagOutline',
     onPress: () => {},
   },
 
   {
     label: 'Dietary',
-    icon: 'NutritionOutline',
+    name: 'NutritionOutline',
     onPress: () => {},
   },
 ];
@@ -75,7 +75,11 @@ export default function FilterModal() {
       <View
         className="absolute bottom-0 left-0 right-0 h-[100px] bg-white p-2.5 shadow-md flex-row items-start justify-center"
         style={{ gap: 10 }}>
-        <Button onPress={handleClearAll} color="outlinePrimary" baseClassName="flex-1">
+        <Button
+          onPress={handleClearAll}
+          color="outlinePrimary"
+          baseClassName="flex-1"
+          isDisabled={!activeFilters.length}>
           Clear all
         </Button>
 
