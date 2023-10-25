@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { Link, useNavigation } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
@@ -10,6 +10,7 @@ import { useBasketStore } from '@/stores/basketStore';
 const Basket = () => {
   const { products, total, clearCart, reduceProduct } = useBasketStore();
   const [order, setOrder] = useState(false);
+  const { goBack } = useNavigation();
 
   const FEES = {
     service: 2.99,
@@ -22,7 +23,7 @@ const Basket = () => {
   };
 
   return (
-    <>
+    <SafeAreaView edges={['top']} className="flex-1">
       {order && (
         <ConfettiCannon
           count={200}
@@ -96,7 +97,13 @@ const Basket = () => {
           />
 
           <View className="absolute bg-white bottom-0 left-0 w-full p-2.5 shadow-md">
-            <SafeAreaView edges={['bottom']} className="bg-white">
+            <SafeAreaView edges={['bottom']} className="bg-white flex-row" style={{ gap: 10 }}>
+              <TouchableOpacity
+                className="bg-white border border-red-500 px-2 rounded-lg items-center justify-center flex-1 h-[50px]"
+                onPress={goBack}>
+                <Text className="text-red-500 font-bold text-base">Go back</Text>
+              </TouchableOpacity>
+
               <TouchableOpacity
                 className="bg-primary px-2 rounded-lg items-center justify-center flex-1 h-[50px]"
                 onPress={startCheckout}>
@@ -106,7 +113,7 @@ const Basket = () => {
           </View>
         </>
       )}
-    </>
+    </SafeAreaView>
   );
 };
 

@@ -79,16 +79,7 @@ export default function RootLayout() {
         <Stack.Screen
           name="basket"
           options={{
-            headerTitle: 'Basket',
-            headerShadowVisible: false,
-            headerLeft: () => (
-              <TouchableOpacity
-                onPress={() => {
-                  goBack();
-                }}>
-                <Icon name="CloseOutline" size={28} className="text-primary" />
-              </TouchableOpacity>
-            ),
+            headerShown: false,
           }}
         />
       </Stack>
