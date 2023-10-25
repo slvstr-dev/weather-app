@@ -10,23 +10,23 @@ import { FilterOptions, type Filter } from '@/components/ui/FilterList/FilterLis
 const filters: Filter[] = [
   {
     label: 'Sort',
-    icon: 'ArrowDownOutline',
+    name: 'ArrowDownOutline',
     onPress: () => {},
   },
   {
     label: 'Hygene rating',
-    icon: 'RestaurantOutline',
+    name: 'RestaurantOutline',
     onPress: () => {},
   },
   {
     label: 'Offers',
-    icon: 'PriceTagOutline',
+    name: 'PriceTagOutline',
     onPress: () => {},
   },
 
   {
     label: 'Dietary',
-    icon: 'NutritionOutline',
+    name: 'NutritionOutline',
     onPress: () => {},
   },
 ];

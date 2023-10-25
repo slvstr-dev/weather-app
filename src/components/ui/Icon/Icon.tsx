@@ -1,13 +1,13 @@
 import * as Icons from './components/index';
 
 export type IconProps = {
-  icon: keyof typeof Icons;
+  name: keyof typeof Icons;
   className?: string;
   size?: number;
 };
 
-export function Icon({ icon, size = 20, ...props }: IconProps) {
-  const Component = Icons[icon];
+export function Icon({ name, size = 20, ...props }: IconProps) {
+  const Component = Icons[name];
 
   return <Component width={size} height={size} {...props} />;
 }

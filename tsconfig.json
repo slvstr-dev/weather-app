@@ -7,7 +7,9 @@
     "paths": {
       "@/assets/*": ["./src/assets/*"],
       "@/components/*": ["./src/components/*"],
+      "@/constants/*": ["./src/constants/*"],
       "@/utils/*": ["./src/utils/*"],
+      "@/stores/*": ["./src/stores/*"],
       "@/types/*": ["./src/types/*"],
       "@/*": ["./*"]
     }

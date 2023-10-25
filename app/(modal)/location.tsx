@@ -56,7 +56,7 @@ export default function LocationModal() {
           },
         }}
         renderLeftButton={() => (
-          <Icon icon="SearchOutline" className="text-medium absolute top-[20] left-[15] z-10" />
+          <Icon name="SearchOutline" className="text-medium absolute top-[20] left-[15] z-10" />
         )}
         enablePoweredByContainer={false}
       />

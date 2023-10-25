@@ -10,3 +10,6 @@ export * from './RestaurantOutline';
 export * from './PriceTagOutline';
 export * from './NutritionOutline';
 export * from './ArrowDownOutline';
+export * from './ArrowBackOutline';
+export * from './ShareOutline';
+export * from './TrashOutline';

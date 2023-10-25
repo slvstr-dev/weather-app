@@ -38,7 +38,7 @@ export default function RootLayout() {
             },
             headerLeft: () => (
               <TouchableOpacity onPress={goBack}>
-                <Icon icon="CloseOutline" size={28} className="text-primary" />
+                <Icon name="CloseOutline" size={28} className="text-primary" />
               </TouchableOpacity>
             ),
           }}
@@ -52,7 +52,41 @@ export default function RootLayout() {
             headerShadowVisible: false,
             headerLeft: () => (
               <TouchableOpacity onPress={goBack}>
-                <Icon icon="CloseOutline" size={28} className="text-primary" />
+                <Icon name="CloseOutline" size={28} className="text-primary" />
+              </TouchableOpacity>
+            ),
+          }}
+        />
+
+        <Stack.Screen
+          name="(modal)/dish"
+          options={{
+            presentation: 'modal',
+            headerTitle: '',
+            headerTransparent: true,
+            headerLeft: () => (
+              <TouchableOpacity
+                className="bg-white rounded-full p-1.5"
+                onPress={() => {
+                  goBack();
+                }}>
+                <Icon name="CloseOutline" size={28} className="text-primary" />
+              </TouchableOpacity>
+            ),
+          }}
+        />
+
+        <Stack.Screen
+          name="basket"
+          options={{
+            headerTitle: 'Basket',
+            headerShadowVisible: false,
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  goBack();
+                }}>
+                <Icon name="CloseOutline" size={28} className="text-primary" />
               </TouchableOpacity>
             ),
           }}

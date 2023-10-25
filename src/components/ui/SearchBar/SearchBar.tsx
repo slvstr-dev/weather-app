@@ -15,7 +15,7 @@ export default function SearchBar({ baseClassName }: SearchBarProps) {
       style={{ gap: 10 }}>
       <View className="flex-1">
         <View className="flex-row items-center bg-lightGrey rounded-lg px-2" style={{ gap: 4 }}>
-          <Icon icon="SearchOutline" className="text-medium" />
+          <Icon name="SearchOutline" className="text-medium" />
 
           <TextInput
             className="p-2.5 text-mediumDark"
@@ -26,7 +26,7 @@ export default function SearchBar({ baseClassName }: SearchBarProps) {
 
       <Link href="/(modal)/filter" asChild>
         <TouchableOpacity className="p-2.5 rounded-full">
-          <Icon icon="OptionsOutline" className="text-primary" />
+          <Icon name="OptionsOutline" className="text-primary" />
         </TouchableOpacity>
       </Link>
     </View>
